@@ -1,0 +1,48 @@
+/*
+body{
+  background-image: url(images/Avett_Brothers_at_Red_Rocks.jpg);
+
+}*/
+
+body {
+  background-color: rgba(14, 54, 46, 0.85);
+}
+.main {
+  height: 100%;
+
+}
+section{
+  display: inline-flex;
+  flex-grow: 3;
+  flex-basis: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.9;
+
+}
+
+}
+#show-info {
+  z-index: 1;
+  opacity: 0.2;
+  position: absolute;
+  /*padding-top: 10%;*/
+}
+#background-image {
+  width: 95%;
+  margin: 0 auto;
+  opacity: 0.5;
+  z-index: 0;
+  position: absolute;
+}
+.container {
+  display: static;
+  width: 95%;
+  margin: 0 auto;
+}
+.navbar-header {
+  padding-top: 0.5%;
+}
+.navbar-form {
+  padding-top: 7px;
+}

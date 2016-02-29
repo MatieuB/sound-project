@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <!-- <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Lil%27%20Wayne" class="bit-widget-initializer" data-artist="Lil&#x27; Wayne">Lil&#x27; Wayne Tour Dates</a> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default ">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Local Sounds</a>
+          <i class="fa fa-music fa-2x"></i>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form " role="search">
+            <div class="form-group">
+              <input id="city" type="text" class="form-control" placeholder="City">
+              <input id="state" type="text" class="form-control" placeholder="State">
+              <input id="radius" type="text" class="form-control" placeholder="Mile Radius">
+            </div>
+            <button id="submit" type="submit" class="btn btn-default">Submit</button>
+          </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="main">
+      <img id="background-image" src="images/Avett_Bros.jpg" alt="stage-shot">
+
+      <section id="show-info">
+        <table class="table table-hover">
+          <thead>
+            <td>
+              Date
+            </td>
+            <td>
+              Band
+            </td>
+            <td>
+              Venue/TIX
+            </td>
+            <td>
+              Photo
+            </td>
+            <td>
+              Listen
+            </td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Feb 29</td>
+              <td>The Decemberists</td>
+              <td>Boulder Theatre</td>
+              <td>Photo</td>
+              <td>Widget</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
