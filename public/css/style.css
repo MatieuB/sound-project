@@ -1,26 +1,26 @@
-/*
-body{
-  background-image: url(images/Avett_Brothers_at_Red_Rocks.jpg);
-
-}*/
-
 body {
   background-color: rgba(14, 54, 46, 0.85);
 }
 .main {
-  height: 100%;
-
+  height: 100vh;
+  background: url('../../images/Avett_Bros.jpg');
+  overflow: scroll;
 }
-section{
+section {
   display: inline-flex;
-  flex-grow: 3;
-  flex-basis: 40px;
   font-size: 16px;
-
   opacity: 0.99;
-  color:rgb(210, 210, 210);
-
-
+  color: rgb(55, 57, 18);
+}
+a {
+  color: rgb(60, 94, 238);
+}
+tr {
+  background-color: rgba(185, 222, 149, 0.51);
+}
+iframe {
+  width: 100%;
+  height: 10%;
 }
 
 }
@@ -28,7 +28,7 @@ section{
   z-index: 1;
   opacity: 0.99;
   position: absolute;
-  color:white;
+  color: white;
   /*padding-top: 10%;*/
 }
 #background-image {
