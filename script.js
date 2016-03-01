@@ -27,14 +27,16 @@ $.ajax(settings).success(function(d) {
 
 for (var i = 0; i < d.length; i++) {
       var event = {};
-      event.date = d[i].datetime;
-      event.band = d[i].artists[0].name;
-      event.venue = d[i].venue.name;
-      event.tix = d[i].ticket_url;
-      event.lat = d[i].venue.latitude;
-      event.long = d[i].venue.longitude;
+      event.date = '<td>'+ d[i].datetime +'</td>';
+      event.band = '<td>'+ d[i].artists[0].name +'</td>';
+      event.venue = '<td>'+ d[i].venue.name +'<a href ="' + d[i].ticket_url +'"> (Buy Tickets!)</a></td>';
+      event.tix = '<td> </td>';
+      event.lat = '<td>'+ d[i].venue.latitude +'</td>';
+      event.long = '<td>'+ d[i].venue.longitude +'</td>';
       event.widget = 'widget';
-      eventArray.push(event);
+      eventArray.push(eventObject);
+      var eventObject = '<tr>'+event.date+event.band+event.venue +'</tr>'
+      $('tbody').append(eventObject);
     }
 console.log(eventArray);
 
