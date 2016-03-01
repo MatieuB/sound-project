@@ -35,7 +35,7 @@ $(document).ready(function() {
         var event = {};
         event.date = '<td>' + d[i].datetime + '</td>';
         event.band = '<td class="listen"><button>' + d[i].artists[0].name + '</button></td>';
-        event.venue = '<td>' ;
+        event.venue = '<td>'+ d[i].venue.name + '<a href ="' + d[i].ticket_url + '"><br>(Buy Tickets!)</a></td>' ;
         event.tix = '<td> </td>';
         event.lat = '<td>' + d[i].venue.latitude + '</td>';
         event.long = '<td>' + d[i].venue.longitude + '</td>';
@@ -46,7 +46,7 @@ $(document).ready(function() {
         $('tbody').append(eventTR);
       }
       // console.log(eventArray);
-// + d[i].venue.name + '<a href ="' + d[i].ticket_url + '"><br>(Buy Tickets!)</a></td>'
+
       //click on band name to hear a sample of music
       $('.listen').on('click', function() {
         e.preventDefault();
