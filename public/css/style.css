@@ -5,6 +5,8 @@ body {
   height: 100vh;
   background: url('../../images/Avett_Bros.jpg');
   overflow: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 section {
   display: inline-flex;
