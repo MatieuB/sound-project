@@ -13,7 +13,7 @@ $(document).ready(function() {
     console.log(date);
 
 
-    var url = "http://api.bandsintown.com/events/search?format=json&app_id=Local_Sounds&api_version=2.0&location=" + city + "," + state + "&radius=" + radius + "&date="+ date;
+    var url = "https://api.bandsintown.com/events/search?format=json&app_id=Local_Sounds&api_version=2.0&location=" + city + "," + state + "&radius=" + radius + "&date="+ date;
 
     console.log(url);
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
         function play(bandName) {
           bandName = bandName.replace(/\s/g, '-');
 
-          var bandUrl = "http://soundcloud.com/" + bandName;
+          var bandUrl = "https://soundcloud.com/" + bandName;
           track_url = bandUrl;
           SC.initialize({
             client_id: '087867b3551fce712c09e156c457e95c',
