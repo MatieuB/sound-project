@@ -5,7 +5,7 @@
 
   <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  <!-- <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Lil%27%20Wayne" class="bit-widget-initializer" data-artist="Lil&#x27; Wayne">Lil&#x27; Wayne Tour Dates</a> -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Optional theme -->
@@ -43,6 +43,7 @@
             <div class="form-group">
               <input id="city" type="text" class="form-control" placeholder="City">
               <input id="state" type="text" class="form-control" placeholder="State">
+              <input id="date" type="date" class="form-control" placeholder="Date">
               <input id="radius" type="text" class="form-control" placeholder="Mile Radius">
             </div>
             <button id="submit" type="submit" class="btn btn-default">Submit</button>
@@ -54,12 +55,12 @@
       <!-- /.container-fluid -->
     </nav>
     <div id="widget"></div>
-    <div class="main" >
+    <div class="main">
       <section id="show-info">
         <table id="table" class="table table-hover">
           <thead>
             <td>
-              Date
+              Date/Time
             </td>
             <td>
               Band<i class="fa fa-headphones"></i>

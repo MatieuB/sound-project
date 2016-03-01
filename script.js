@@ -9,8 +9,13 @@ $(document).ready(function() {
     var city = $('#city').val();
     var state = $('#state').val();
     var radius = $('#radius').val();
+    var date = $('#date').val();
+    console.log(date);
 
-    var url = "http://api.bandsintown.com/events/search?format=json&app_id=Local_Sounds&api_version=2.0&location=" + city + "," + state + "&radius=" + radius;
+
+    var url = "http://api.bandsintown.com/events/search?format=json&app_id=Local_Sounds&api_version=2.0&location=" + city + "," + state + "&radius=" + radius + "&date="+ date;
+
+    console.log(url);
 
 
     var settings = {
@@ -21,6 +26,7 @@ $(document).ready(function() {
       "method": "GET"
     };
     $.ajax(settings).success(function(d) {
+      // console.log(d);
       console.log("made ajax request...");
 
       var eventArray = [];
@@ -42,45 +48,64 @@ $(document).ready(function() {
       // console.log(eventArray);
 
       //click on band name to hear a sample of music
-      $('.listen').on('click',function() {
+      $('.listen').on('click', function() {
         e.preventDefault();
+        $('#widget').empty();
         console.log("band clicked!");
         var bandName = $(this).text();
         console.log(bandName);
-        var bandUrl = "http://soundcloud.com/"+bandName;
-        track_url = bandUrl;
 
-        SC.initialize({
-          client_id: '087867b3551fce712c09e156c457e95c',
-          client_secret: 'd32af60ddb5057120f766d748e9da182'
-        });
-        var track_url = bandUrl;
-        SC.oEmbed(track_url, {
-          auto_play: true
-        }).then(function(oEmbed) {
-          console.log('oEmbed response: ', oEmbed);
-          $('#widget').append(oEmbed.html);
-            });
+        play(bandName);
+        var triedOnce = false;
+        function play(bandName) {
+          bandName = bandName.replace(/\s/g, '-');
 
-    })
+          var bandUrl = "http://soundcloud.com/" + bandName;
+          track_url = bandUrl;
+          SC.initialize({
+            client_id: '087867b3551fce712c09e156c457e95c',
+            client_secret: 'd32af60ddb5057120f766d748e9da182'
+          });
+          var track_url = bandUrl;
+          SC.oEmbed(track_url, {
+            auto_play: true
+          }).then(function(oEmbed) {
+            console.log('oEmbed response: ', oEmbed);
+            $('#widget').append(oEmbed.html);
+          }).catch(function(error) {
+            console.log(error);
 
-  });
+            bandName = bandName.replace(/-/g, '')
+            console.log(bandName);
+            if(!triedOnce){
+              play(bandName);
+            } else{
+              alert('Sorry, can\'t find them');
+            }
+            triedOnce = true;
+
+          })
+        }
+
+      })
+
+    });
 
 
-  // Embed SoundCloud Widget
+    // Embed SoundCloud Widget
 
 
-  //click on band name to hear a sample of music
-  // $('#listen').on('click',function(e) {
-  //   e.preventDefault();
-  //   console.log("band clicked!");
+    //click on band name to hear a sample of music
+    // $('#listen').on('click',function(e) {
+    //   e.preventDefault();
+    //   console.log("band clicked!");
     // var target = $(event.target);
     // var bandName = target.val();
     // console.log(bandName);
     //
     // var urlBand = "http://soundcloud.com/" +bandName;
     // track_url= urlBand;
-    });
+  });
 
 
 
