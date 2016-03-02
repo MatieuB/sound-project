@@ -8,6 +8,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.container-fluid {
+  background-color: rgba(77, 130, 99, 0.72);
+  border: 1px solid silver;
+  margin-bottom: 2px;
+
+}
+#logo{
+  color:orange;
+  font-family: Pacifico;
+  font-size: 24px;
+}
 section {
   display: inline-flex;
   font-size: 16px;
