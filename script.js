@@ -1,17 +1,38 @@
 $(document).ready(function() {
   console.log("ready!");
+  // $('#showTracker').show();
+  // $('#showTracker').append(localStorage.getItem('shows'));
   // function addToLocalStorage() {;
   var showTracker = [];
   var trackedShow;
   // var showsChecked = $('input:checked');
 
 
+
   $('tbody').on('change', '.interest', function() {
     if ($(event.target).is(':checked')) {
       console.log("checkbox changed");
-      trackedShow = ($(this).parent().children());
-      console.log(trackedShow);
-      showTracker.push('<li>'+trackedShow.text()+'</li>');
+      // trackedShow = ($(this).parent().children().text());
+      $(this).parent().children().each(function(item){
+        // console.log($(this).html());
+
+        showTracker.push('<table><tbody><tr class="favoriteShows">'+$(this).html()+'</tr></tbody><table>');
+      })
+
+      if(localStorage.getItem('shows')){
+        var temp = localStorage.getItem('shows').toString();
+        showTracker.pop();
+        var temp2 = temp + showTracker.join("");
+        localStorage.setItem('shows', temp2);
+
+      }else{
+
+        showTracker.pop();
+        localStorage.setItem('shows', showTracker.join(""));
+      }
+
+
+      console.log('tracked show', trackedShow);
       console.log("show tracker: " + showTracker);
     } else {
       showTracker.splice(showTracker.indexOf($(this).parent().children().text()), 1);
@@ -21,9 +42,19 @@ $(document).ready(function() {
   $('#makeList').on('click',function(e){
     e.preventDefault();
     $('#showTracker').show();
-    $('#showTracker').append(showTracker);
+
+    $('#showTracker').append(localStorage.getItem('shows'));
   });
-  // addToLocalStorage();
+  //delete items from localStorage
+  $('#removeList').on('click',function(e){
+    e.preventDefault();
+    $('#showTracker').empty();
+    $('#showTracker').hide();
+  for(var key in localStorage){
+    delete localStorage[key];
+  }
+});
+
 
 
   $('#submit').on('click', function(e) {
@@ -58,9 +89,6 @@ console.log(d);
         var event = {};
         var date = d[i].datetime.slice(0,10);
 
-
-
-
         event.interested = '<td class="interest"><input  type="checkbox"></td>';
         event.date = '<td class="date">' + date + '</td>';
 
@@ -85,7 +113,7 @@ console.log(d);
 
 
       //click on band name to hear a sample of music
-      $('.listen').on('click', function() {
+      $('.listen').on('click', function(e) {
         e.preventDefault();
         $('#widget').empty();
         console.log("band clicked!");
@@ -128,5 +156,14 @@ console.log(d);
         }
       })
     });
+localStorage.setItem('city', city);
+localStorage.setItem('state', state);
+
+
+
+
+
   });
+$('#city').val(localStorage.getItem('city'));
+$('#state').val(localStorage.getItem('state'));
 });

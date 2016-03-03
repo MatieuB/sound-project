@@ -25,6 +25,9 @@ thead {
   background-color: rgb(131, 89, 18);
 
 }
+td{
+  max-width: 15%;
+}
 #logo{
   color:rgb(131, 89, 18);
   font-family: Pacifico;
