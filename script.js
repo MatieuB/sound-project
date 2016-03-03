@@ -3,14 +3,7 @@ $(document).ready(function() {
   // function addToLocalStorage() {;
   var showTracker = [];
   var trackedShow;
-  var showsChecked = $('input:checked');
-// $('.interest').on('click',function(){
-// console.log("box checked");
-// for(var i = 0; i < showsChecked.length; i++) {
-//   trackedShow = ($(this).parent().children());
-//   console.log(trackedShow);
-//   }
-// })
+  // var showsChecked = $('input:checked');
 
 
   $('tbody').on('change', '.interest', function() {
@@ -63,10 +56,17 @@ console.log(d);
 
       for (var i = 0; i < d.length; i++) {
         var event = {};
+        var date = d[i].datetime.slice(0,10);
+
+
+
+
         event.interested = '<td class="interest"><input  type="checkbox"></td>';
-        event.date = '<td class="date">' + d[i].datetime + '</td>';
-        event.band = '<td class="listen"><button>' + d[i].artists[0].name + '</button></td>';
+        event.date = '<td class="date">' + date + '</td>';
+
+        event.band = '<td class="listen"><button class="btn-md btn-default">' + d[i].artists[0].name +'  <i class="fa fa-headphones">' +'</button></td>';
         event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '"><br><strong>Buy Tickets!</strong></a></td>';
+
         // event.tix = '<td> </td>';
         // event.lat = '<td>' + d[i].venue.latitude + '</td>';
         // event.long = '<td>' + d[i].venue.longitude + '</td>';
@@ -78,6 +78,9 @@ console.log(d);
 
         var eventTR = '<tr>' + event.date + event.band + event.venue + event.interested + '</tr>'
         $('tbody').append(eventTR);
+
+
+        console.log(date);
       }
 
 

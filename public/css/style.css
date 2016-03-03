@@ -14,23 +14,44 @@ body {
   margin-bottom: 2px;
 
 }
+thead {
+  color:rgb(72, 87, 83);
+  /*position: sticky;*/
+}
+.btn{
+  color:rgb(64, 63, 61);
+}
+.btn-success{
+  background-color: rgb(131, 89, 18);
+
+}
 #logo{
-  color:orange;
+  color:rgb(131, 89, 18);
   font-family: Pacifico;
-  font-size: 24px;
+  font-size: 30px;
+  text-shadow: 3px 2px 2px rgba(150, 150, 150, 0.95);
 }
 section {
   display: inline-flex;
   font-size: 16px;
   opacity: 0.99;
   color: rgb(55, 57, 18);
+  font-family: Kaushan-script;
 }
 a {
-  color: rgb(60, 94, 238);
+  color: rgb(131, 89, 18);
 }
 tr {
   background-color: rgba(185, 222, 149, 0.51);
+  font-size: 18px;
+  color:rgb(64, 63, 61);
+  font-weight: bold;
+  font-family: Josefin Sans;
 }
+tr .btn{
+  color:rgb(131, 89, 18);
+}
+
 iframe {
   width: 100%;
   height: 20%;
