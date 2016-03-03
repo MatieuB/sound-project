@@ -65,7 +65,7 @@ console.log(d);
         event.date = '<td class="date">' + date + '</td>';
 
         event.band = '<td class="listen"><button class="btn-md btn-default">' + d[i].artists[0].name +'</button></td>';
-        event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '"><br><strong>Buy Tickets!</strong></a></td>';
+        event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '">  | <strong>Buy Tickets!</strong></a></td>';
 
         // event.tix = '<td> </td>';
         // event.lat = '<td>' + d[i].venue.latitude + '</td>';
