@@ -61,7 +61,8 @@ iframe {
 }
 #showTracker {
   display:none;
-  width:55%;
+  width:60%;
+  background-color: rgba(185, 222, 149, 0.51);
 }
 }
 #show-info {

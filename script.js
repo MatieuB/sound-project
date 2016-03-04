@@ -21,6 +21,8 @@ $(document).ready(function() {
     e.preventDefault();
     $('#showTracker').show();
     $('#showTracker').append(showTracker);
+$('input[type=checkbox]').attr('checked',true).click();
+$('input[type=checkbox]').attr('checked',false);
   });
   //delete showTracker
   $('#removeList').on('click', function(e) {
@@ -70,7 +72,7 @@ $(document).ready(function() {
 
 $('#submit').on('click', function(e) {
   e.preventDefault();
-  $('tbody').html('');
+  $('#tbody').html('');
   var city = $('#city').val();
   var state = $('#state').val();
   var radius = $('#radius').val();
@@ -116,7 +118,7 @@ $('#submit').on('click', function(e) {
       // console.log(eventArray[1]);
 
       var eventTR = '<tr>' + event.date + event.band + event.venue + event.interested + '</tr>'
-      $('tbody').append(eventTR);
+      $('#tbody').append(eventTR);
 
 
       console.log(date);
