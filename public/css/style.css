@@ -16,7 +16,7 @@ body {
 }
 thead {
   color:rgb(72, 87, 83);
-  /*position: sticky;*/
+  /*position: absolute;*/
 }
 .btn{
   color:rgb(64, 63, 61);
@@ -61,6 +61,7 @@ iframe {
 }
 #showTracker {
   display:none;
+  width:55%;
 }
 }
 #show-info {
