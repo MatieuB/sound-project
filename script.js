@@ -105,7 +105,10 @@ $('#submit').on('click', function(e) {
       event.interested = '<td class="interest"><input  type="checkbox"></td>';
       event.date = '<td class="date">' + date + '</td>';
 
-      event.band = '<td class="listen"><button class="btn-md btn-default">' + d[i].artists[0].name + '</button></td>';
+      // event.band = '<td class="listen"><button class="btn-md btn-default">' + d[i].artists[0].name + '</button></td>';
+
+  event.band = '<td class="listen"><a href="bandName"><i class="fa fa-play-circle fa"></i></a>' + d[i].artists[0].name  + '</td>';
+
       event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '">  | <strong>Buy Tickets!</strong></a></td>';
 
       // event.tix = '<td> </td>';
