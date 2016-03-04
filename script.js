@@ -109,7 +109,7 @@ $('#submit').on('click', function(e) {
 
   event.band = '<td class="listen"><a href="bandName"><i class="fa fa-play-circle fa"></i></a>' + d[i].artists[0].name  + '</td>';
 
-      event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '">  | <strong>Buy Tickets!</strong></a></td>';
+      event.venue = '<td class="venue">' + d[i].venue.name + '<a target=cd_blank href ="' + d[i].ticket_url + '"><br> <strong>Buy Tickets!</strong></a></td>';
 
       // event.tix = '<td> </td>';
       // event.lat = '<td>' + d[i].venue.latitude + '</td>';
