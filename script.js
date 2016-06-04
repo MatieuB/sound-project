@@ -127,8 +127,7 @@ $('#submit').on('click', function(e) {
       console.log(date);
     }
 
-
-    //click on band name to hear a sample of music
+  //click on band name to hear a sample of music
     $('.listen').on('click', function(e) {
       e.preventDefault();
       $('#widget').empty();
